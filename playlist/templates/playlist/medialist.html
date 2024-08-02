@@ -1,0 +1,20 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}playlist{% endblock  %}
+{% block content %}
+    <div class="container">
+        {% for i in video %}
+        <div class="card w-50 CS mx-auto mt-3">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/{{i.embed}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="mx-auto my-auto"></iframe>
+            <div class="card-body text-center my-auto">
+            <h4 class="card-title text-center my-auto">{{i.title}}</h4>
+            <p class="card-text text-center my-auto">{{i.text}}</p>
+            <span>{{i.likes}}</span>
+            <a href="#" class="btn btn-primary text-center"></a>
+            <a href="#" class="btn btn-primary text-center"></a>
+            <span>{{i.dislikes}}</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock  %}

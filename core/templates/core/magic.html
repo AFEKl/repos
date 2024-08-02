@@ -1,0 +1,14 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}playlist{% endblock  %}
+{% block content %}
+    <main>
+    <h1 class="text-center my-3">Magic numbers</h1>
+    <form action="" method="post" class="d-flex flex-column w-25 mx-auto gap-3">
+        {% csrf_token %}
+        <input type="number" required class="form-control" name="user_guess" placeholder="Enter guess number">
+        <button type="submit" class="btn btn-outline-warning d-block mx-auto w-50 shadow-lg">confirm</button>
+    </form>
+    <h2 class="text-center mt-2">{{result}}</h2>
+    <h2>{{resultt}}</h2>
+{% endblock  %}

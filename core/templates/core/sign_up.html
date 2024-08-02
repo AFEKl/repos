@@ -1,0 +1,26 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block title %}sign up{% endblock  %}
+{% block content %}
+    <main>
+    <h1 class="text-center my-3">Sign up</h1>
+    <form action="" class="d-flex flex-column w-25 mx-auto gap-2" method="post">
+        {% csrf_token %}
+        <input type="text" class="form-control" placeholder="Enter your username..." name="username">
+        <input type="password" placeholder="Enter your password..." name="password" id=""class="form-control ">
+        <input type="password" placeholder="Repeat your password..." name="repeat_password" id=""class="form-control">
+        <input type="email" placeholder="Enter your email..." name="email"class="form-control">
+        <input type="date" name="age" class="form-control">
+        <div class="d-flex justify-content-center gap-3">
+            <span>Male</span>
+            <input type="radio" name="gender" value="male">
+            <input type="radio" name="gender" value="female">
+            <span>Female</span>
+        </div>
+        <div class="d-flex justify-content-center gap-3">
+            <span>user terms</span>
+            <input type="checkbox" name="user_terms" id="">
+        </div>
+        <button type="submit" class="btn btn-outline-warning d-block mx-auto w-50 shadow-lg"> confirm</button>
+    </form>
+{% endblock  %}
